@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "DM Serif Display", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #f7f4ed;
+    color: #16352e;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .hero {
+    background-image: url("https://images.unsplash.com/photo-1636484807510-bc2ffbaf3241?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=90&w=2200");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .nav-link {
+    position: relative;
+    color: rgb(255 255 255 / 0.76);
+    transition: color 180ms ease;
+  }
+
+  .nav-link:hover {
+    color: white;
+  }
+
+  .nav-link::after {
+    background: #e9ff7a;
+    bottom: -8px;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms ease;
+    width: 100%;
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  .eyebrow {
+    color: #54736b;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(42px, 5.2vw, 68px);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+  }
+
+  .section-title em {
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    background-position: 62% center;
+  }
+}
